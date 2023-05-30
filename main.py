@@ -15,7 +15,7 @@ import time
 import uvicorn
 
 def start_server(host="0.0.0.0",
-                 port=8082,
+                 port=10000,
                  num_workers=4,
                  loop="asyncio",
                  reload=False):
