@@ -14,17 +14,17 @@ from multiprocessing import cpu_count, freeze_support
 import time
 import uvicorn
 
-def start_server(host="0.0.0.0",
-                 port=10000,
-                 num_workers=4,
-                 loop="asyncio",
-                 reload=False):
-    uvicorn.run("main:app",
-                host=host,
-                port=port,
-                workers=num_workers,
-                loop=loop,
-                reload=reload)
+# def start_server(host="0.0.0.0",
+#                  port=10000,
+#                  num_workers=4,
+#                  loop="asyncio",
+#                  reload=False):
+#     uvicorn.run("main:app",
+#                 host=host,
+#                 port=port,
+#                 workers=num_workers,
+#                 loop=loop,
+#                 reload=reload)
 LOCAL_WORKSPACE_PATH = '.'
 
 paths = {
@@ -152,9 +152,9 @@ async def detect_object_json(file: bytes = File(...)):
     return {"inspection_result" : inspection_result, "classes": detection_classes, "b64" : im_b64}
 
 
-if __name__ == '__main__':
-    # uvicorn.run(app, port=8082, host='0.0.0.0')
-    freeze_support()  # Needed for pyinstaller for multiprocessing on WindowsOS
-    num_workers = int(cpu_count() * 0.75)
-    start_server(num_workers=num_workers)
+# if __name__ == '__main__':
+#     # uvicorn.run(app, port=8082, host='0.0.0.0')
+#     freeze_support()  # Needed for pyinstaller for multiprocessing on WindowsOS
+#     num_workers = int(cpu_count() * 0.75)
+#     start_server(num_workers=num_workers)
     
